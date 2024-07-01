@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
+import { login } from "@/lib/auth";
+
 export default function Login() {
   const navigate = useNavigate();
 
-  function login() {
-    localStorage.setItem(import.meta.env.VITE_TOKEN_KEY, "Test");
+  async function handleButtonClick() {
+    await login();
     navigate("/");
   }
 
@@ -14,7 +16,7 @@ export default function Login() {
         <p>Login Page</p>
       </div>
       <div>
-        <button onClick={login}>Login</button>
+        <button onClick={handleButtonClick}>Login</button>
       </div>
     </div>
   );

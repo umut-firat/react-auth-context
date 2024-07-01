@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 
-import { authLoader } from "@/lib/auth";
+import { auhenticate } from "@/lib/auth";
 import { AuthProvider } from "@/providers";
 
 import Home from "@/app/home";
@@ -9,7 +9,7 @@ import Login from "@/app/login";
 export const router = createBrowserRouter([
   {
     path: "/",
-    loader: authLoader,
+    loader: auhenticate,
     element: <AuthProvider />,
     children: [
       {

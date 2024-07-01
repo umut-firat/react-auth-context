@@ -1,4 +1,4 @@
 interface User {
-  readonly id: number;
+  id: number;
   username: string;
 }
